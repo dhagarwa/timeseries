@@ -1,0 +1,21 @@
+#Getting AMAZON stock dataset and loading the needed packages
+if(!require(quantmod)) install.packages("quantmod")
+if(!require(forecast)) install.packages("forecast")
+if(!require(xlsx)) install.packages("xlsx")
+if(!require(tseries)) install.packages("tseries")
+if(!require(timeSeries)) install.packages("timeSeries")
+if(!require(dplyr)) install.packages("dplyr")
+if(!require(fGarch)) install.packages("fGarch")
+if(!require(prophet)) install.packages("prophet")
+library(prophet)
+library(quantmod)
+library(forecast)
+library("xlsx")
+library(tseries)
+library(timeSeries)
+library(dplyr)
+library(fGarch)
+
+getSymbols("AMZN", src="yahoo", from="2015-01-01")
+
+print(adf.test(close_price))
